@@ -21,7 +21,7 @@ data "aws_iam_policy_document" "github_trust" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:dustinstrietzel/verity-website:ref:refs/heads/main"]
+      values   = ["repo:dustinstrietzel@335163737/verity-website@1467017356:ref:refs/heads/main"]
     }
   }
 }
