@@ -1,292 +1,737 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Verity Process Service | Process Server in Littleton &amp; Denver's South Metro</title>
-<meta name="description" content="Routine, rush, and same-day process service across Littleton, Highlands Ranch, Centennial, Englewood and Denver's south metro. Evening and weekend attempts. Notarized affidavit included.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #1B2A4A;
-    --navy-dark: #121E36;
-    --gray: #5F6B7A;
-    --line: #DDE2EA;
-    --bg-soft: #F4F6F9;
-    --text: #1F2733;
-    --white: #FFFFFF;
-    --radius: 10px;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-    color: var(--text);
-    line-height: 1.6;
-    background: var(--white);
-  }
-  a { color: var(--navy); }
-  a:hover { color: var(--navy-dark); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-  .serif { font-family: "Source Serif 4", Georgia, serif; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verity Process Service | Process Server in Littleton &amp; Denver's South Metro</title>
+  <meta name="description"
+    content="Routine, rush, and same-day process service across Littleton, Highlands Ranch, Centennial, Englewood and Denver's south metro. Evening and weekend attempts. Notarized affidavit included.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --navy-dark: #121E36;
+      --gray: #5F6B7A;
+      --line: #DDE2EA;
+      --bg-soft: #F4F6F9;
+      --text: #1F2733;
+      --white: #FFFFFF;
+      --radius: 10px;
+    }
 
-  /* Header */
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: var(--white);
-    border-bottom: 1px solid var(--line);
-  }
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px; max-width: 1080px; margin: 0 auto; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
-  .brand-name { display: flex; flex-direction: column; line-height: 1.1; }
-  .brand-name .serif { font-size: 22px; font-weight: 700; letter-spacing: 3px; }
-  .brand-name small { font-size: 10px; font-weight: 600; letter-spacing: 3px; color: var(--gray); }
-  nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
-  nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--text); }
-  nav a:hover { color: var(--navy); }
-  .btn {
-    display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px;
-    padding: 12px 20px; border-radius: var(--radius); border: 2px solid var(--navy);
-    min-height: 44px;
-  }
-  .btn-solid { background: var(--navy); color: var(--white); }
-  .btn-solid:hover { background: var(--navy-dark); border-color: var(--navy-dark); color: var(--white); }
-  .btn-ghost { background: transparent; color: var(--white); border-color: var(--white); }
-  .btn-ghost:hover { background: var(--white); color: var(--navy); }
+    * {
+      box-sizing: border-box;
+    }
 
-  /* Hero */
-  .hero { background: var(--navy); color: var(--white); padding: 80px 0 72px; }
-  .hero h1 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(34px, 5vw, 52px); line-height: 1.15; margin: 0 0 18px; max-width: 760px; }
-  .hero p { font-size: 19px; max-width: 640px; margin: 0 0 30px; color: #D6DCE6; }
-  .hero .actions { display: flex; gap: 14px; flex-wrap: wrap; }
-  .points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 52px; }
-  .point { border-top: 2px solid #3A4C70; padding-top: 14px; }
-  .point strong { display: block; font-size: 16px; }
-  .point span { font-size: 14px; color: #C9D1DE; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* Sections */
-  section { padding: 72px 0; }
-  section.soft { background: var(--bg-soft); }
-  h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 34px; color: var(--navy); margin: 0 0 10px; }
-  .lead { color: var(--gray); font-size: 17px; margin: 0 0 32px; max-width: 680px; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
 
-  /* Pricing */
-  .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-  .tier { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 8px; }
-  .tier.featured { border: 2px solid var(--navy); }
-  .tier h3 { margin: 0; font-size: 18px; color: var(--navy); }
-  .price { font-family: "Source Serif 4", Georgia, serif; font-size: 44px; font-weight: 700; color: var(--navy); line-height: 1; margin: 6px 0; }
-  .tier p { margin: 0; color: var(--gray); font-size: 15px; }
-  .tag { align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; background: var(--navy); color: var(--white); padding: 4px 10px; border-radius: 99px; }
-  table { width: 100%; border-collapse: collapse; margin-top: 28px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-  th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 15px; }
-  th { background: var(--bg-soft); color: var(--navy); font-weight: 600; }
-  tr:last-child td { border-bottom: none; }
-  td:last-child, th:last-child { text-align: right; white-space: nowrap; }
-  .fine { font-size: 14px; color: var(--gray); margin-top: 14px; }
+    a {
+      color: var(--navy);
+    }
 
-  /* Area */
-  .area { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
-  .chips li { background: var(--white); border: 1px solid var(--line); border-radius: 99px; padding: 8px 16px; font-size: 15px; }
-  .area h3 { color: var(--navy); margin: 0 0 14px; font-size: 18px; }
+    a:hover {
+      color: var(--navy-dark);
+    }
 
-  /* Steps */
-  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; counter-reset: step; padding: 0; margin: 0; list-style: none; }
-  .steps li { border: 1px solid var(--line); border-radius: 14px; padding: 26px; }
-  .steps li::before { counter-increment: step; content: counter(step); display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 700; margin-bottom: 14px; }
-  .steps h3 { margin: 0 0 6px; font-size: 18px; color: var(--navy); }
-  .steps p { margin: 0; color: var(--gray); font-size: 15px; }
-  .checklist { margin: 28px 0 0; padding: 22px 26px; background: var(--bg-soft); border-radius: 14px; }
-  .checklist h3 { margin: 0 0 10px; font-size: 17px; color: var(--navy); }
-  .checklist ul { margin: 0; padding-left: 20px; columns: 2; column-gap: 32px; }
-  .checklist li { margin-bottom: 6px; font-size: 15px; }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* About + Contact */
-  .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: start; }
-  .contact-card { background: var(--navy); color: var(--white); border-radius: 14px; padding: 32px; }
-  .contact-card h2 { color: var(--white); }
-  .contact-card p { color: #D6DCE6; }
-  .contact-card a.email { color: var(--white); font-size: 20px; font-weight: 600; word-break: break-all; }
-  .contact-card dl { margin: 24px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 15px; }
-  .contact-card dt { color: #C9D1DE; }
-  .contact-card dd { margin: 0; }
+    .serif {
+      font-family: "Source Serif 4", Georgia, serif;
+    }
 
-  footer { background: var(--navy-dark); color: #C9D1DE; padding: 32px 0; font-size: 14px; }
-  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
 
-  @media (max-width: 820px) {
-    nav a:not(.btn) { display: none; }
-    .points, .tiers, .steps, .area, .two { grid-template-columns: 1fr; }
-    .checklist ul { columns: 1; }
-    .hero { padding: 56px 0; }
-    section { padding: 56px 0; }
-    th, td { padding: 12px; }
-  }
-</style>
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name .serif {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .brand-name small {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--gray);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    nav a:hover {
+      color: var(--navy);
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      border: 2px solid var(--navy);
+      min-height: 44px;
+    }
+
+    .btn-solid {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-solid:hover {
+      background: var(--navy-dark);
+      border-color: var(--navy-dark);
+      color: var(--white);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .btn-ghost:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 0 72px;
+    }
+
+    .hero h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 640px;
+      margin: 0 0 30px;
+      color: #D6DCE6;
+    }
+
+    .hero .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 52px;
+    }
+
+    .point {
+      border-top: 2px solid #3A4C70;
+      padding-top: 14px;
+    }
+
+    .point strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .point span {
+      font-size: 14px;
+      color: #C9D1DE;
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+    }
+
+    section.soft {
+      background: var(--bg-soft);
+    }
+
+    h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 34px;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+
+    .lead {
+      color: var(--gray);
+      font-size: 17px;
+      margin: 0 0 32px;
+      max-width: 680px;
+    }
+
+    /* Pricing */
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .tier {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tier.featured {
+      border: 2px solid var(--navy);
+    }
+
+    .tier h3 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .price {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin: 6px 0;
+    }
+
+    .tier p {
+      margin: 0;
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    .tag {
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--navy);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    th {
+      background: var(--bg-soft);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td:last-child,
+    th:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .fine {
+      font-size: 14px;
+      color: var(--gray);
+      margin-top: 14px;
+    }
+
+    /* Area */
+    .area {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .chips li {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 8px 16px;
+      font-size: 15px;
+    }
+
+    .area h3 {
+      color: var(--navy);
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    /* Steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      counter-reset: step;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .steps h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .steps p {
+      margin: 0;
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    .checklist {
+      margin: 28px 0 0;
+      padding: 22px 26px;
+      background: var(--bg-soft);
+      border-radius: 14px;
+    }
+
+    .checklist h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      color: var(--navy);
+    }
+
+    .checklist ul {
+      margin: 0;
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .checklist li {
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    /* About + Contact */
+    .two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 32px;
+    }
+
+    .contact-card h2 {
+      color: var(--white);
+    }
+
+    .contact-card p {
+      color: #D6DCE6;
+    }
+
+    .contact-card a.email {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .contact-card dl {
+      margin: 24px 0 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 18px;
+      font-size: 15px;
+    }
+
+    .contact-card dt {
+      color: #C9D1DE;
+    }
+
+    .contact-card dd {
+      margin: 0;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: #C9D1DE;
+      padding: 32px 0;
+      font-size: 14px;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      nav a:not(.btn) {
+        display: none;
+      }
+
+      .points,
+      .tiers,
+      .steps,
+      .area,
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist ul {
+        columns: 1;
+      }
+
+      .hero {
+        padding: 56px 0;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      th,
+      td {
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="bar">
-    <a class="brand" href="#top" aria-label="Verity Process Service home">
-      <svg width="44" height="44" viewBox="0 0 148 148" aria-hidden="true">
-        <circle cx="74" cy="74" r="70" fill="none" stroke="#1B2A4A" stroke-width="6"/>
-        <circle cx="74" cy="74" r="58" fill="none" stroke="#5F6B7A" stroke-width="2" stroke-dasharray="3 5"/>
-        <circle cx="74" cy="74" r="46" fill="#1B2A4A"/>
-        <path d="M53 75 L68 90 L96 60" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="brand-name"><span class="serif">VERITY</span><small>PROCESS SERVICE</small></span>
-    </a>
-    <nav aria-label="Main">
-      <a href="#pricing">Pricing</a>
-      <a href="#area">Service area</a>
-      <a href="#how">How it works</a>
-      <a href="tel:+19838002923">(983) 800-2923</a>
-      <a class="btn btn-solid" href="#contact">Send a job</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-
-  <section class="hero">
-    <div class="wrap">
-      <h1>Process service for Denver's south metro.</h1>
-      <p>Routine, rush, and same-day service of process from Littleton to Lone Tree, with evening and weekend attempts and a notarized affidavit on every serve.</p>
-      <div class="actions">
-        <a class="btn btn-ghost" href="mailto:verityprocessservice@gmail.com?subject=New%20service%20request">Email your documents</a>
-        <a class="btn btn-ghost" href="tel:+19838002923">Call (983) 800-2923</a>
-      </div>
-      <div class="points">
-        <div class="point"><strong>Evenings &amp; weekends</strong><span>Attempts when people are actually home.</span></div>
-        <div class="point"><strong>Notarized affidavit included</strong><span>Emailed to you as soon as service is complete.</span></div>
-        <div class="point"><strong>Updates after every attempt</strong><span>You always know where your serve stands.</span></div>
-      </div>
+  <header>
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="Verity Process Service home">
+        <svg width="44" height="44" viewBox="0 0 148 148" aria-hidden="true">
+          <circle cx="74" cy="74" r="70" fill="none" stroke="#1B2A4A" stroke-width="6" />
+          <circle cx="74" cy="74" r="58" fill="none" stroke="#5F6B7A" stroke-width="2" stroke-dasharray="3 5" />
+          <circle cx="74" cy="74" r="46" fill="#1B2A4A" />
+          <path d="M53 75 L68 90 L96 60" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span class="brand-name"><span class="serif">VERITY</span><small>PROCESS SERVICE</small></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#pricing">Pricing</a>
+        <a href="#area">Service area</a>
+        <a href="#how">How it works</a>
+        <a href="tel:+19838002923">(983) 800-2923</a>
+        <a class="btn btn-solid" href="#contact">Send a job</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="pricing" class="soft">
-    <div class="wrap">
-      <h2>Simple, flat pricing</h2>
-      <p class="lead">Prices are per person served at one address within our service area. Every level includes multiple attempts at different times of day and a notarized affidavit.</p>
+  <main id="top">
 
-      <div class="tiers">
-        <div class="tier">
-          <h3>Routine</h3>
-          <div class="price">$75</div>
-          <p>First attempt within 3 business days. Up to 3 attempts, including evenings and weekends.</p>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Process service for Denver's south metro.</h1>
+        <p>Routine, rush, and same-day service of process from Littleton to Lone Tree, with evening and weekend attempts
+          and a notarized affidavit on every serve.</p>
+        <div class="actions">
+          <a class="btn btn-ghost" href="mailto:verityprocessservice@gmail.com?subject=New%20service%20request">Email
+            your documents</a>
+          <a class="btn btn-ghost" href="tel:+19838002923">Call (983) 800-2923</a>
         </div>
-        <div class="tier featured">
-          <span class="tag">Recommended</span>
-          <h3>Rush</h3>
-          <div class="price">$110</div>
-          <p>First attempt within 24 hours. Up to 3 attempts, including evenings and weekends.</p>
-        </div>
-        <div class="tier">
-          <h3>Priority</h3>
-          <div class="price">$150</div>
-          <p>First attempt the same day for orders confirmed by noon. Up to 3 attempts. Subject to availability.</p>
+        <div class="points">
+          <div class="point"><strong>Evenings &amp; weekends</strong><span>Attempts when people are actually
+              home.</span></div>
+          <div class="point"><strong>Notarized affidavit included</strong><span>Emailed to you as soon as service is
+              complete.</span></div>
+          <div class="point"><strong>Updates after every attempt</strong><span>You always know where your serve
+              stands.</span></div>
         </div>
       </div>
+    </section>
 
-      <table>
-        <thead>
-          <tr><th scope="col">Additional services</th><th scope="col">Price</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Additional address for the same person (e.g. home and work)</td><td>+$25</td></tr>
-          <tr><td>Stakeout / wait time for evasive parties</td><td>$45 / hour</td></tr>
-          <tr><td>Eviction notice posting</td><td>$60</td></tr>
-          <tr><td>Notarized affidavit of service</td><td>Included</td></tr>
-          <tr><td>Service outside our area</td><td>Travel fee, quoted up front</td></tr>
-        </tbody>
-      </table>
-      <p class="fine">Law firms and property managers: monthly invoicing is available. Just ask.</p>
-    </div>
-  </section>
+    <section id="pricing" class="soft">
+      <div class="wrap">
+        <h2>Simple, flat pricing</h2>
+        <p class="lead">Prices are per person served at one address within our service area. Every level includes
+          multiple attempts at different times of day and a notarized affidavit.</p>
 
-  <section id="area">
-    <div class="wrap">
-      <h2>Where we serve</h2>
-      <p class="lead">Based in Littleton and serving the south Denver metro. Outside these areas? Email us for a quick travel quote.</p>
-      <div class="area">
-        <div>
-          <h3>Cities &amp; communities</h3>
-          <ul class="chips">
-            <li>Littleton</li><li>Highlands Ranch</li><li>Centennial</li><li>Englewood</li>
-            <li>Lone Tree</li><li>Ken Caryl</li><li>Columbine</li><li>Greenwood Village</li>
-            <li>Cherry Hills Village</li><li>Sheridan</li><li>Lakewood</li><li>Parker</li>
-            <li>Aurora</li><li>Denver</li>
+        <div class="tiers">
+          <div class="tier">
+            <h3>Routine</h3>
+            <div class="price">$75</div>
+            <p>First attempt within 3 business days. Up to 3 attempts, including evenings and weekends.</p>
+          </div>
+          <div class="tier featured">
+            <span class="tag">Recommended</span>
+            <h3>Rush</h3>
+            <div class="price">$110</div>
+            <p>First attempt within 24 hours. Up to 3 attempts, including evenings and weekends.</p>
+          </div>
+          <div class="tier">
+            <h3>Priority</h3>
+            <div class="price">$150</div>
+            <p>First attempt the same day for orders confirmed by noon. Up to 3 attempts. Subject to availability.</p>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Additional services</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Additional address for the same person (e.g. home and work)</td>
+              <td>+$25</td>
+            </tr>
+            <tr>
+              <td>Stakeout / wait time for evasive parties</td>
+              <td>$45 / hour</td>
+            </tr>
+            <tr>
+              <td>Eviction notice posting</td>
+              <td>$60</td>
+            </tr>
+            <tr>
+              <td>Notarized affidavit of service</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Service outside our area</td>
+              <td>Travel fee, quoted up front</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="fine">Law firms and property managers: monthly invoicing is available. Just ask.</p>
+      </div>
+    </section>
+
+    <section id="area">
+      <div class="wrap">
+        <h2>Where we serve</h2>
+        <p class="lead">Based in Littleton and serving the south Denver metro. Outside these areas? Email us for a quick
+          travel quote.</p>
+        <div class="area">
+          <div>
+            <h3>Cities &amp; communities</h3>
+            <ul class="chips">
+              <li>Littleton</li>
+              <li>Highlands Ranch</li>
+              <li>Centennial</li>
+              <li>Englewood</li>
+              <li>Lone Tree</li>
+              <li>Ken Caryl</li>
+              <li>Columbine</li>
+              <li>Greenwood Village</li>
+              <li>Cherry Hills Village</li>
+              <li>Sheridan</li>
+              <li>Lakewood</li>
+              <li>Parker</li>
+              <li>Aurora</li>
+              <li>Denver</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Counties</h3>
+            <ul class="chips">
+              <li>Arapahoe County</li>
+              <li>Douglas County</li>
+              <li>Jefferson County</li>
+              <li>Denver County</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="soft">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <p class="lead">Most jobs start with a single email.</p>
+        <ol class="steps">
+          <li>
+            <h3>Send your request</h3>
+            <p>Email PDFs with the details below. We'll reply to confirm acceptance, timeline, and any travel fee before
+              work begins. Prefer paper? Document pickup is available within our service area.</p>
+          </li>
+          <li>
+            <h3>We attempt service</h3>
+            <p>Attempts at varied times, including evenings and weekends, with an update after each one.</p>
+          </li>
+          <li>
+            <h3>Get your affidavit</h3>
+            <p>Once served, you receive a notarized affidavit of service by email, ready to file. Originals mailed on
+              request.</p>
+          </li>
+        </ol>
+        <div class="checklist">
+          <h3>What to include in your email</h3>
+          <ul>
+            <li>Documents to be served (PDF)</li>
+            <li>Name of the person or business to serve</li>
+            <li>Service address(es)</li>
+            <li>Service level: routine, rush, or priority</li>
+            <li>Case number and court, if available</li>
+            <li>Any deadline or hearing date</li>
+            <li>Description or photo of the person, if available</li>
+            <li>Best times to find them, if known</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap two">
         <div>
-          <h3>Counties</h3>
-          <ul class="chips">
-            <li>Arapahoe County</li><li>Douglas County</li><li>Jefferson County</li><li>Denver County</li>
-          </ul>
+          <h2>About Verity</h2>
+          <p>Verity Process Service is an independent, locally owned process serving company based in Littleton,
+            Colorado. We serve attorneys, property managers, businesses, and individuals across Denver's south metro.
+          </p>
+          <p>Our focus is simple: careful, professional service done on time, with clear communication and accurate,
+            court-ready documentation.</p>
+          <p class="fine">Verity Process Service is not a law firm and cannot provide legal advice.</p>
+        </div>
+        <div class="contact-card">
+          <h2>Send a job</h2>
+          <p>Email your documents and details. We'll confirm acceptance and timing before we start. Turnaround begins
+            once your order is confirmed.</p>
+          <a class="email"
+            href="mailto:verityprocessservice@gmail.com?subject=New%20service%20request">verityprocessservice@gmail.com</a>
+          <dl>
+            <dt>Phone</dt>
+            <dd><a href="tel:+19838002923" style="color:#FFFFFF">(983) 800-2923</a></dd>
+            <dt>Service days</dt>
+            <dd>7 days a week, including evenings</dd>
+            <dt>Billing</dt>
+            <dd>Invoice by email; monthly billing for firms</dd>
+          </dl>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="how" class="soft">
+  </main>
+
+  <footer>
     <div class="wrap">
-      <h2>How it works</h2>
-      <p class="lead">Most jobs start with a single email.</p>
-      <ol class="steps">
-        <li><h3>Send your request</h3><p>Email PDFs with the details below. We'll reply to confirm acceptance, timeline, and any travel fee before work begins. Prefer paper? Document pickup is available within our service area.</p></li>
-        <li><h3>We attempt service</h3><p>Attempts at varied times, including evenings and weekends, with an update after each one.</p></li>
-        <li><h3>Get your affidavit</h3><p>Once served, you receive a notarized affidavit of service by email, ready to file. Originals mailed on request.</p></li>
-      </ol>
-      <div class="checklist">
-        <h3>What to include in your email</h3>
-        <ul>
-          <li>Documents to be served (PDF)</li>
-          <li>Name of the person or business to serve</li>
-          <li>Service address(es)</li>
-          <li>Service level: routine, rush, or priority</li>
-          <li>Case number and court, if available</li>
-          <li>Any deadline or hearing date</li>
-          <li>Description or photo of the person, if available</li>
-          <li>Best times to find them, if known</li>
-        </ul>
-      </div>
+      <span>&copy; 2026 Verity Process Service LLC</span>
+      <span>Littleton, Colorado &middot; Serving Denver's South Metro</span>
     </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap two">
-      <div>
-        <h2>About Verity</h2>
-        <p>Verity Process Service is an independent, locally owned process serving company based in Littleton, Colorado. We serve attorneys, property managers, businesses, and individuals across Denver's south metro.</p>
-        <p>Our focus is simple: careful, professional service done on time, with clear communication and accurate, court-ready documentation.</p>
-        <p class="fine">Verity Process Service is not a law firm and cannot provide legal advice.</p>
-      </div>
-      <div class="contact-card">
-        <h2>Send a job</h2>
-        <p>Email your documents and details. We'll confirm acceptance and timing before we start. Turnaround begins once your order is confirmed.</p>
-        <a class="email" href="mailto:verityprocessservice@gmail.com?subject=New%20service%20request">verityprocessservice@gmail.com</a>
-        <dl>
-          <dt>Phone</dt><dd><a href="tel:+19838002923" style="color:#FFFFFF">(983) 800-2923</a></dd>
-          <dt>Service days</dt><dd>7 days a week, including evenings</dd>
-          <dt>Billing</dt><dd>Invoice by email; monthly billing for firms</dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>&copy; 2026 Verity Process Service LLC</span>
-    <span>Littleton, Colorado &middot; Serving Denver's south metro</span>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
